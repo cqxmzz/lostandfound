@@ -1,0 +1,23 @@
+<<<<<<< HEAD
+/build
+/target
+=======
+src/AwsCredentials.properties
+
+*target*
+*.jar
+*.war
+*.ear
+*.class
+
+# eclipse specific git ignore
+*.pydevproject
+.metadata
+build/**
+bin/**
+tmp/**
+tmp/**/*
+>>>>>>> 516d9c56844f1a1d8ae948f21a844ea9b84dbaa6
+*.properties
+*.DS_Store
+*.settings
