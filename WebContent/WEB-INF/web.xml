@@ -49,4 +49,14 @@
     <servlet-name>FoundSrv</servlet-name>
     <url-pattern>/FoundSrv</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ObjectSrv</display-name>
+    <servlet-name>ObjectSrv</servlet-name>
+    <servlet-class>ObjectSrv</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ObjectSrv</servlet-name>
+    <url-pattern>/ObjectSrv</url-pattern>
+  </servlet-mapping>
 </web-app>
