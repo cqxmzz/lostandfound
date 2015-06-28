@@ -1,0 +1,386 @@
+
+
+body {
+    background-color: #ddd;
+    color: #fff;
+    background-image: url(../img/background.png);
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position-y: -100px;
+}
+
+/* Backgrounds */
+.navbar > .navbar-inner.x-nav-inner {
+    background-color: #3B81E0;
+}
+
+h1.x-main-header {    
+    background-image: url(../img/seekit-text.png);
+    background-size: contain;
+    background-repeat: no-repeat;    
+    text-align: center;
+    height: 70px;
+    background-position: 50%;
+}
+
+div.navbar.x-main-navbar{
+    margin: 0 !important;
+    box-shadow: 0 0 5px black;
+}
+
+.navbar > .navbar-inner.x-nav-inner{
+    min-height: 60px;
+    background-color: #3B81E0;
+    background-image: none !important;    
+    color: #fff;
+    border: none;
+    border-radius: 0px;
+    padding: 0 50px;
+}
+
+.x-nav-height{
+    min-height: 60px;
+    z-index: 0;
+    visibility: hidden;
+}
+
+.x-login-item{
+    display: block;
+    overflow: hidden;
+}
+
+.x-login-item > div {
+    float: left;   
+    margin-top: 11px;
+}
+
+.x-login-item > div.x-profile-picture {
+    background-image: url(../img/default-profile.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+}
+
+.x-login-item > div.x-user-name{    
+    padding-left: 10px;
+    padding-top: 10px;    
+}
+
+.x-login-item > div.x-user-name > a{
+    color: #fff;
+    font-weight: bold;
+    text-decoration: underline;
+    font-size: 16px;
+}
+
+.container.x-main-wrapper{
+    padding-top: 40px;
+}
+
+a.x-brand{
+    color: #fff;
+    padding-top: 17px;
+    font-size: 35px;
+    display: inline-block;
+    background-image: url(../img/logo.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 115px;
+    height: 10px;
+    margin-top: 15px;
+}
+
+div.x-tip{
+    margin-top: 40px;
+    text-align: center;    
+    font-size: 28px;
+    padding-bottom: 20px;
+    line-height: 30px;
+}
+
+.x-brand-name {
+    font-weight: bold;
+}
+
+.x-lost-found-holder {
+    overflow: hidden;
+    margin-top: 15px;
+
+    padding: 55px;
+}
+
+.x-lost-found-holder .x-lost-found-holder-inner {
+    margin: 0 auto;
+    width: 700px;
+    overflow: hidden;
+}
+
+.x-lost-found-holder-inner > div {
+    float: left;
+    width: 50%;
+    height: 350px;
+}
+
+.x-lost-found-holder a.x-img-holder {
+    display: block;
+    width: 100%;
+    height: 300px;
+
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-x: 50%;
+}
+
+.x-lost-found-holder div.x-text-holder {
+    font-size: 31px;
+    padding-top: 14px;
+    text-align: center;
+}
+
+.x-lost-found-holder-inner > div.x-lost-holder a.x-img-holder{
+    background-image: url(../img/lost.png);
+}
+
+.x-lost-found-holder-inner > div.x-found-holder a.x-img-holder{
+    background-image: url(../img/found.png);
+}
+
+.x-main-footer {
+    overflow: hidden;
+    margin-top: 20px;
+    min-height: 50px;
+}
+
+.x-main-footer .x-footer-left{
+    float: left;
+}
+
+.x-main-footer .x-footer-left .x-items-found{    
+    background-image: url(../img/numbers.png);
+    background-repeat: no-repeat;
+    width: 120px;
+    height: 40px;
+    background-size: contain;
+}
+
+.x-main-footer .x-footer-left .x-message{
+    font-size: 18px;
+}
+
+.x-main-footer .x-footer-right {
+    float: right;
+}
+
+.x-main-footer .x-footer-right i.x-icon-questionmark{
+    display: block;
+    background-image: url(../img/questionmark.png);
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 40px;
+    background-size: contain;
+}
+
+.x-content{
+    min-height: 517px;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+}
+
+.x-tip-holder {
+    min-height: 40px;
+    margin-top: 40px;
+}
+
+.x-lost-holder, .x-found-holder{
+    cursor: pointer;
+}
+
+.x-slider{
+    display: none;
+}
+
+.x-home-view{
+    display: block;
+}
+
+/*.x-email-view{
+    display: block;
+}*/
+
+/*.x-lost-description-view{
+    display: block;
+}*/
+
+/*.x-lost-success-view {
+    display: block;
+}*/
+
+form li {
+    list-style-type: none;
+}
+
+div.x-input-holder {
+    background-color: #fff;
+    display: inline-block;
+    border-radius: 25px;
+    overflow: hidden;
+    width: 300px;
+    margin-bottom: 5px;
+}
+
+div.x-input-holder div.x-preinput{
+    display: inline-block;
+    height: 45px;
+    width: 30px;
+    float: left;
+    margin-right: 10px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-left: 10px;
+    background-position-y: 50%;
+
+}
+
+div.x-input-holder input, div.x-input-holder input:focus{
+    background-color: transparent;
+    border: none;
+    width: 250px;
+    height: 45px;
+    margin: 0;
+    padding: 0;
+
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    -webkit-transition: none;
+    -moz-transition: none;
+    -o-transition: none;
+    transition: none;
+}
+
+.x-preinput.x-email{
+    background-image: url(../img/envelope.png);
+}
+
+.x-preinput.x-date{
+    background-image: url(../img/calendar.png);
+}
+
+.x-preinput.x-location{
+    background-image: url(../img/location.png);
+}
+
+.x-preinput.x-user{
+    background-image: url(../img/user.png);
+}
+
+
+div.x-form-view{
+    text-align: center;
+    margin-top: 55px;
+}
+
+a.x-next-button{
+    display: inline-block;
+    width: 300px;
+    height: 30px;
+    border-radius: 25px;
+    background-color: #3B81E0;
+    color: #fff;
+    text-decoration: none;
+    padding-top: 15px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.x-add-tag-holder{
+    display: inline-block;
+    overflow: hidden;
+    width: 300px;
+}
+
+.x-add-tag-holder .x-add-tag-button{    
+    width: 45px;
+    height: 35px;
+    float: right;
+    color: #fff;
+    border-radius: 25px;
+    background-color: #3B81E0;
+    font-size: 30px;
+    font-weight: bold;
+    padding-top: 7px;
+    cursor: pointer;
+}
+
+li.phone-settings{
+    display: none;
+}
+
+.x-success-holder{    
+    overflow: hidden;
+    text-align: center;
+    margin-top: 230px;
+}
+
+.x-success{    
+    overflow: hidden;
+    display: inline-block;
+}
+
+.x-icon-success{
+    background-image: url(../img/check.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 30px;
+    height: 30px;
+    display: block;
+
+    float: left;
+}
+
+.x-success-text{    
+    float: left;
+    margin-left: 20px;
+    font-size: 32px;
+    padding-top: 5px;
+    color: #555;
+}
+
+.x-go-back-holder{
+    clear: both;
+}
+
+.x-go-back-holder a{
+    color: #3B81E0;
+    text-decoration: underline;
+    font-size: 17px;
+}
+
+.x-loading .x-loader{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0, 0.8);
+    display: table;
+}
+
+.x-loader {
+    display: none;
+}
+
+.x-loader .x-loader-inner{    
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.x-loading-msg{
+    width: 300px;
+    margin: 0 auto;
+    font-size: 32px;
+}

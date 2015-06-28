@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Seekit | Find whatever you lost</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/bootstrap.min.css" rel="stylesheet" media="screen" />
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />  
+        <link href="css/styles.css" rel="stylesheet" media="screen" />        
+    </head>
+    <body>
+        <div class="navbar x-main-navbar navbar-fixed-top">
+            <div class="navbar-inner x-nav-inner">
+                <a class="x-brand" href="#"></a>
+                <!--                <ul class="nav pull-right">
+                                    <li class="x-login-item">
+                                        <div class="x-profile-picture"></div>
+                                        <div class="x-user-name">
+                                            <a href="#">Login</a>
+                                        </div>
+                                    </li>
+                                </ul>-->
+            </div>
+        </div>
+        <div class="x-nav-height"></div>
+        <div class="container x-main-wrapper">
+            <h1 class="x-main-header"></h1>
+            <div class="x-tip-holder">
+                <div class="x-tip x-home-view x-slider">
+                    Welcome to <strong class="x-brand-name">Seekit</strong>, we can help 
+                    you find whatever you lost :)
+                </div>
+
+                <div class="x-tip x-email-view x-slider">
+                    Please tell us your email address so you can get notifications.
+                </div>
+
+                <!-- Loser specific -->
+                <div class="x-tip x-when-where-view x-slider x-loser">
+                    We are sorry to hear that, please tell us more about what 
+                    you have lost.
+                </div>                
+
+                <div class="x-tip x-description-view x-slider x-loser">
+                    Please add description tags for your lost item
+                </div>
+
+                <div class="x-tip x-success-view x-slider x-loser">
+                    Thank you for submitting. We will send you an email as soon as
+                    we find a match for your description
+                </div>
+                
+                <div class="x-tip x-success-view x-slider x-finder">
+                    Thank you for submitting. We will send you an email if it 
+                    matches another request.
+                </div>
+
+
+                <!-- finder specific -->                
+                <div class="x-tip x-when-where-view x-slider x-finder">
+                    Thank you for your findings. We'd appreciate if you could
+                    give us some more detailed information.
+                </div>
+
+                <div class="x-tip x-description-view x-slider x-finder">
+                    Please provide some details about the object the you found
+                </div>
+            </div>
+            <div class="x-content">
+                <!-- Home -->
+                <div class="x-lost-found-holder x-slider x-home-view">
+                    <div class="x-lost-found-holder-inner">
+                        <div class="x-lost-holder"  title="Click here to report lost items">
+                            <a class="x-img-holder"></a>
+                            <div class="x-text-holder">
+                                I just lost...
+                            </div>
+                        </div>                    
+                        <div class="x-found-holder"  title="Click here to report found items">
+                            <a class="x-img-holder"></a>
+                            <div class="x-text-holder">
+                                I just found...
+                            </div>
+                        </div>                
+                    </div>
+                </div>
+                <!-- End Home -->
+
+                <!-- Email --->
+                <div class="x-slider x-form-view x-email-view">
+                    <form id="email-form">
+                        <ul>                            
+                            <li>
+                                <div class="x-input-holder">
+                                    <div class="x-preinput x-user"></div>
+                                    <input type="text" name="user" placeholder="Your name" required="required" id="user"/>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="x-input-holder">
+                                    <div class="x-preinput x-email"></div>
+                                    <input type="email" name="email" placeholder="Email" required="required" id="email"/>
+                                </div>
+                            </li>
+                            <li>
+                                <a class="x-next-button x-email-button">
+                                    Submit
+                                </a>
+                            </li>
+                        </ul>
+                    </form>
+                </div>
+                <!-- End Email -->
+
+                <!-- When where view -->
+                <div class="x-slider x-form-view x-when-where-view x-loser x-finder">
+                    <form id="when-where-form">
+                        <ul>
+                            <li>
+                                <div class="x-input-holder">
+                                    <div class="x-preinput x-date"></div>
+                                    <input type="text" name="time" placeholder="Date" required="required" id="date"/>
+                                </div>
+                            </li>                            
+                            <li>
+                                <div class="x-input-holder">
+                                    <div class="x-preinput x-location"></div>
+                                    <input type="text" name="location" placeholder="Location" required="required" id="location"/>
+                                </div>
+                            </li>       
+                            <li>
+                                <a class="x-next-button x-when-where-button">
+                                    Submit
+                                </a>
+                            </li>                     
+                        </ul>
+                    </form>
+                </div>
+                <!-- When where view ends -->
+
+                <!-- Lost description -->
+                <div class="x-slider x-form-view x-description-view x-loser x-finder">
+                    <form id="description">
+                        <ul>
+                            <li>
+                                <div class="x-input-holder">
+                                    <div class="x-preinput x-date"></div>
+                                    <input type="text" name="name" placeholder="What is it?" required="required" id="name"/>
+                                </div>
+                            </li>                            
+                            <li class="phone-settings">
+                                <div class="x-input-holder">
+                                    <div class="x-preinput x-brand"></div>
+                                    <input type="text" name="brand" placeholder="Brand" required="required"/>
+                                </div>
+                            </li>                            
+                            <li class="phone-settings">
+                                <div class="x-input-holder">
+                                    <div class="x-preinput x-color"></div>
+                                    <input type="text" name="color" placeholder="Color" required="required"/>
+                                </div>
+                            </li> 
+                            <li id="lost-adder">
+                                <div class="x-add-tag-holder">
+                                    <div id="add-lost-button" class="x-add-tag-button">+</div>
+                                </div>
+                            </li>
+                            <li>
+                                <a class="x-next-button x-description-button">
+                                    Submit
+                                </a>
+                            </li>                     
+                        </ul>
+                    </form>
+                </div>
+                <!-- Lost description ends -->
+
+                <!-- Lost success -->
+                <div class="x-slider x-success-view x-finder x-loser">
+                    <div class="x-success-holder">
+                        <div class="x-success">
+                            <i class="x-icon-success"></i>
+                            <div class="x-success-text">
+                                Finished
+                            </div>
+                        </div>
+                        <div class="x-go-back-holder">
+                            <a href="/">Go back to homepage</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Lost success ends -->
+            </div>            
+
+            <div class="x-main-footer">
+                <div class="x-footer-left">
+                    <div class="x-message">
+                        Items found in the last 30 days
+                    </div>
+                    <div class="x-items-found"></div>
+                </div>
+                <div class="x-footer-right">
+                    <i class="x-icon-questionmark"></i>
+                </div>
+            </div>
+        </div>
+        <div class="x-loader">
+            <div class="x-loader-inner">
+                <div class="x-loading-msg">
+                    Loading...
+                </div>
+            </div>
+        </div>
+        <script src="js/jquery/jquery.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/jquery/jquery-ui.js"></script>        
+        <script src="js/app.js"></script>
+    </body>
+</html>
