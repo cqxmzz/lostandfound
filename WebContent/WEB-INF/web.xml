@@ -61,12 +61,12 @@
   </servlet-mapping>
   <servlet>
     <description></description>
-    <display-name>Thingsrv</display-name>
-    <servlet-name>Thingsrv</servlet-name>
-    <servlet-class>Thingsrv</servlet-class>
+    <display-name>ThingSrv</display-name>
+    <servlet-name>ThingSrv</servlet-name>
+    <servlet-class>ThingSrv</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>Thingsrv</servlet-name>
-    <url-pattern>/Thingsrv</url-pattern>
+    <servlet-name>ThingSrv</servlet-name>
+    <url-pattern>/ThingSrv</url-pattern>
   </servlet-mapping>
 </web-app>
