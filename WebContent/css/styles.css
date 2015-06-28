@@ -269,6 +269,10 @@ div.x-input-holder input, div.x-input-holder input:focus{
     background-image: url(../img/calendar.png);
 }
 
+.x-preinput.x-question{
+    background-image: url(../img/questionmark2.png);
+}
+
 .x-preinput.x-location{
     background-image: url(../img/location.png);
 }
