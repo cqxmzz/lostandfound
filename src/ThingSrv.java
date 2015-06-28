@@ -2,6 +2,7 @@
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -36,17 +37,34 @@ public class ThingSrv extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("FoundPost");
-		String name = request.getParameter("name");
-	    response.setContentType("text/plain");
+		String lost_found = request.getParameter("type");
+		String data = request.getParameter("data");
+		
+		Gson gson = new Gson();
+		Thing thing = gson.fromJson(data, Thing.class);
+		DatabaseWrapper dbWrapper = new DatabaseWrapper();
+		ArrayList<Thing> matchThings = dbWrapper.getFromDB(!lost_found.equals("lost"));
+		MatchAlgo matchAlgo = new MatchAlgo();
+		int match = matchAlgo.computeMatch(matchThings, thing);
+		if (match != -1) { // Match!
+			EmailWrapper ew = new EmailWrapper();
+			if (lost_found.equals("lost")) {
+				ew.sendEmail(thing, matchThings.get(match));
+			} else {
+				ew.sendEmail(matchThings.get(match), thing);
+			}
+			matchThings.remove(match);
+			dbWrapper.saveToDB(!lost_found.equals("lost"), matchThings);
+		} else { // No match
+			ArrayList<Thing> tempThings = dbWrapper.getFromDB(lost_found.equals("lost"));
+			tempThings.add(thing);
+			dbWrapper.saveToDB(lost_found.equals("lost"), tempThings);
+		}
+		response.setContentType("text/plain");
 	    response.setStatus(200);
 	    PrintWriter writer = response.getWriter();
-	    try {
-	    	
-	    } catch(Exception e) {
-	    	e.printStackTrace();
-	    }
-	    Gson gson = new Gson();
-	    String output = gson.toJson("success");
+	    Gson gson2 = new Gson();
+	    String output = gson2.toJson("success");
 	    writer.write(output);
 	    writer.close();
 	}
