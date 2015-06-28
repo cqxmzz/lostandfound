@@ -1,3 +1,4 @@
+import com.amazonaws.auth.PropertiesCredentials;
 import com.amazonaws.regions.Region;
 import com.amazonaws.regions.Regions;
 import com.amazonaws.services.simpleemail.AmazonSimpleEmailServiceClient;
@@ -14,9 +15,13 @@ public class EmailWrapper {
     static final String BODY = "You got a match";
     static final String SUBJECT = "Good News";
     
-	public void sendEmail(String toEmail) {
-		
-		toEmail = "dr2763@columbia.edu";
+    public static void main(String[] args) {
+    	EmailWrapper wrapper = new EmailWrapper();
+    	wrapper.sendEmail(null, null);
+    }
+    
+	public void sendEmail(Thing thingLost, Thing thingFound) {		
+		String toEmail = thingLost.email;
 		Destination destination = new Destination().withToAddresses(new String[]{toEmail});
         
         // Create the subject and body of the message.
@@ -39,7 +44,9 @@ public class EmailWrapper {
             // using the default credential provider chain. The first place the chain looks for the credentials is in environment variables 
             // AWS_ACCESS_KEY_ID and AWS_SECRET_KEY. 
             // For more information, see http://docs.aws.amazon.com/AWSSdkDocsJava/latest/DeveloperGuide/credentials.html
-            AmazonSimpleEmailServiceClient client = new AmazonSimpleEmailServiceClient();
+            PropertiesCredentials credentials = new PropertiesCredentials(
+            		EmailWrapper.class.getResourceAsStream("AwsCredentials.properties"));
+            AmazonSimpleEmailServiceClient client = new AmazonSimpleEmailServiceClient(credentials);
                
             // Choose the AWS region of the Amazon SES endpoint you want to connect to. Note that your sandbox 
             // status, sending limits, and Amazon SES identity-related settings are specific to a given AWS 
