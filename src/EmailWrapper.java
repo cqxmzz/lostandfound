@@ -19,8 +19,9 @@ public class EmailWrapper {
     }
     
 	public void sendEmail(Thing thingLost, Thing thingFound) {	
-		String BODY_toFinder = "Congratulations! We find the loser for your object!" + "/n/n" + "From Seekit";
-	    String BODY_toLoser = "Congratulations! We find your object!" + "/n/n" + "From Seekit";
+		System.out.println("Email");
+		String BODY_toFinder = "Congratulations! We find the loser for your object!" + "\n\n" + "From Seekit";
+	    String BODY_toLoser = "Congratulations! We find your object!" + "\n\n" + "From Seekit";
 	    String SUBJECT = "Good News from Seekit";
 	    
 		Destination toLoser = new Destination().withToAddresses(new String[]{thingLost.email});

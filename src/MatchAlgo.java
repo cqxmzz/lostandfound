@@ -13,6 +13,9 @@ public class MatchAlgo {
 	
 	// Find a match in the existing list, return -1 if fail
 	public int computeMatch(ArrayList<Thing> things, Thing th) {
+		if(things == null || th == null) {
+			return -1;
+		}
 		for (int i = 0; i < things.size(); ++i) {
 			Thing thing = things.get(i);
 			if (computeMatchPoint(th, thing))
@@ -32,7 +35,7 @@ public class MatchAlgo {
 		int n = t2.features.size();
 		int count = 0;
 		for(int i=0; i<m; i++) {
-			for(int j=0; i<n; j++) {
+			for(int j=0; j<n; j++) {
 				if(match(t1.features.get(i), t2.features.get(j), threshold)) {
 					count++;
 				}

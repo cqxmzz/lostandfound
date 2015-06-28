@@ -39,7 +39,7 @@ public class ThingSrv extends HttpServlet {
 		System.out.println("FoundPost");
 		String lost_found = request.getParameter("type");
 		String data = request.getParameter("data");
-		
+		System.out.println(data);
 		Gson gson = new Gson();
 		Thing thing = gson.fromJson(data, Thing.class);
 		DatabaseWrapper dbWrapper = new DatabaseWrapper();
