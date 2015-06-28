@@ -20,8 +20,10 @@ public class EmailWrapper {
     
 	public void sendEmail(Thing thingLost, Thing thingFound) {	
 		System.out.println("Email");
-		String BODY_toFinder = "Congratulations! We find the loser for your object!" + "\n\n" + "From Seekit";
-	    String BODY_toLoser = "Congratulations! We find your object!" + "\n\n" + "From Seekit";
+		String BODY_toFinder = "Hi, " + thingFound.email + "\n"+ 
+				"Congratulations! We find the loser for your object!" + "\n\n" + "From Seekit";
+	    String BODY_toLoser = "Hi, " + thingLost.email + "\n"+ 
+	    		"Congratulations! We find your object!" + "\n\n" + "From Seekit";
 	    String SUBJECT = "Good News from Seekit";
 	    
 		Destination toLoser = new Destination().withToAddresses(new String[]{thingLost.email});

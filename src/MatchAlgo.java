@@ -81,7 +81,6 @@ public class MatchAlgo {
 			char c1 = str1.charAt(i);
 			for (int j = 0; j < len2; j++) {
 				char c2 = str2.charAt(j);
-	 
 				//if last two chars equal
 				if (c1 == c2) {
 					dp[i + 1][j + 1] = dp[i][j];
