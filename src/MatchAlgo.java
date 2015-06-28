@@ -4,7 +4,7 @@ import java.util.ArrayList;
 public class MatchAlgo {
 	
 	// Find a match in the existing list 
-	public int computeMatch(ArrayList<String> list, boolean isLost) {
+	public int computeMatch(ArrayList<Thing> list, boolean isLost) {
 		return 0;
 	}
 
