@@ -5,6 +5,8 @@ public class Thing {
 	public String name;
 	public String userName;
 	public String email;
+	public String location;
+	public String time;			//YYYY-MM-DDThh:mm:ss
 	List<String> features;
 	
 	public Thing(String name, String userName, String email) {

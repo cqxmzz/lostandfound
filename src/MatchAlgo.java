@@ -3,17 +3,33 @@ import java.util.ArrayList;
 
 public class MatchAlgo {
 	
+	private double threshold = 0.5;
+	
 	// Find a match in the existing list 
-	public int computeMatch(ArrayList<Thing> list, boolean isLost) {
+	public int computeMatch(ArrayList<Thing> things, boolean isLost) {
 		return 0;
 	}
 
 	// Compute Match Point for two record
-	public int computeMatchPoint() {
-		return 0;
+	public int computeMatchPoint(Thing t1, Thing t2) {
+		if(!t1.name.equals(t2.name)) {
+			
+		}
+		if(t1.name.equals("identity")) {
+			
+		} else if(t1.name.equals("phone")) {
+			
+		} else {
+			
+		}
 	}
 	
-	public int editDistanceAlgo(String str1, String str2) {
+	public boolean match(String str1, String str2) {
+		int distance = editDistanceAlgo(str1, str2);
+		return (double)distance/(double)(str1.length() + str2.length())*2 < threshold;
+	}
+	
+	private int editDistanceAlgo(String str1, String str2) {
 		int len1 = str1.length();
 		int len2 = str2.length();
 		// len1+1, len2+1, because finally return dp[len1][len2]
