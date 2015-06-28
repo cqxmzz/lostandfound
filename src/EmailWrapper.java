@@ -20,9 +20,9 @@ public class EmailWrapper {
     
 	public void sendEmail(Thing thingLost, Thing thingFound) {	
 		System.out.println("Email");
-		String BODY_toFinder = "Hi, " + thingFound.email + "\n"+ 
+		String BODY_toFinder = "Hi, " + thingFound.user + "\n"+ 
 				"Congratulations! We find the loser for your object!" + "\n\n" + "From Seekit";
-	    String BODY_toLoser = "Hi, " + thingLost.email + "\n"+ 
+	    String BODY_toLoser = "Hi, " + thingLost.user + "\n"+ 
 	    		"Congratulations! We find your object!" + "\n\n" + "From Seekit";
 	    String SUBJECT = "Good News from Seekit";
 	    
@@ -58,7 +58,7 @@ public class EmailWrapper {
             // region, so be sure to select an AWS region in which you set up Amazon SES. Here, we are using 
             // the US West (Oregon) region. Examples of other regions that Amazon SES supports are US_EAST_1 
             // and EU_WEST_1. For a complete list, see http://docs.aws.amazon.com/ses/latest/DeveloperGuide/regions.html 
-            Region REGION = Region.getRegion(Regions.US_WEST_2);
+            Region REGION = Region.getRegion(Regions.US_EAST_1);
             client.setRegion(REGION);
        
             // Send the email.

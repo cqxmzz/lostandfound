@@ -1,3 +1,7 @@
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import oauth.signpost.OAuthConsumer;
 import oauth.signpost.commonshttp.CommonsHttpOAuthConsumer;
 
@@ -6,6 +10,7 @@ import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.tomcat.jni.Time;
 
 public class TwitterWrapper
 {
@@ -24,7 +29,9 @@ public class TwitterWrapper
 	{
 		try
 		{
-			String post = "Someone%20lost%20something%20at%20" + string + "%21%21%20Come%20to%20%40seekitapp%20to%20claim%20it%21%21%20%23lostandfound";
+			DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+			Date date = new Date();			
+			String post = "Someone%20lost%20something%20in%20" + string + "%20at%20" + dateFormat.format(date) + "%21%21%20Come%20to%20%40seekitapp%20to%20claim%20it%21%21%20%23lostandfound%20%40AngelHack";
 			OAuthConsumer oAuthConsumer = new CommonsHttpOAuthConsumer(consumerKeyStr, consumerSecretStr);
 			oAuthConsumer.setTokenWithSecret(accessTokenStr, accessTokenSecretStr);
 			HttpPost httpPost = new HttpPost("https://api.twitter.com/1.1/statuses/update.json?status=" + post);
