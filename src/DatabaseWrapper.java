@@ -20,12 +20,7 @@ public class DatabaseWrapper
 {
 	public static void main(String[] args)
 	{
-		ArrayList<Thing> ll = new ArrayList<Thing>();
-		ll.add(new Thing("a", "shit", "shit.sthi"));
-		DatabaseWrapper sw = new DatabaseWrapper(); 
-		ArrayList<Thing> aThings = sw.getFromDB(true);
-		Gson gson = new Gson();
-		System.out.print(gson.toJson(aThings));
+		
 	}
 	
 	private class ThingsList
