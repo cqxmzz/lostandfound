@@ -11,15 +11,15 @@ import javax.servlet.http.HttpServletResponse;
 import com.google.gson.Gson;
 
 /**
- * Servlet implementation class ObjectSrv
+ * Servlet implementation class Thingsrv
  */
-public class ObjectSrv extends HttpServlet {
+public class ThingSrv extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ObjectSrv() {
+    public ThingSrv() {
         super();
         // TODO Auto-generated constructor stub
     }

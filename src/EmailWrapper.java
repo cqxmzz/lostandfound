@@ -14,7 +14,7 @@ public class EmailWrapper {
     static final String BODY = "You got a match";
     static final String SUBJECT = "Good News";
     
-	public void SendEmail(String toEmail) {
+	public void sendEmail(String toEmail) {
 		
 		toEmail = "dr2763@columbia.edu";
 		Destination destination = new Destination().withToAddresses(new String[]{toEmail});

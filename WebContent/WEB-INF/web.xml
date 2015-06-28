@@ -59,4 +59,14 @@
     <servlet-name>ObjectSrv</servlet-name>
     <url-pattern>/ObjectSrv</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Thingsrv</display-name>
+    <servlet-name>Thingsrv</servlet-name>
+    <servlet-class>Thingsrv</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Thingsrv</servlet-name>
+    <url-pattern>/Thingsrv</url-pattern>
+  </servlet-mapping>
 </web-app>
