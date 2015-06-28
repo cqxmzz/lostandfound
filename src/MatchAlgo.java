@@ -4,17 +4,22 @@ import java.util.ArrayList;
 public class MatchAlgo {
 	
 	private double threshold = 0.5;
+	private double minCount = 2;
+	private double timeThreshold = 12*60*60;
 	
 	// Find a match in the existing list 
-	public int computeMatch(ArrayList<Thing> things, boolean isLost) {
+	public int computeMatch(ArrayList<Thing> things, Thing th, boolean isLost) {
 		return 0;
 	}
 
 	// Compute Match Point for two record
-	public int computeMatchPoint(Thing t1, Thing t2) {
+	public boolean computeMatchPoint(Thing t1, Thing t2) {
 		if(!t1.name.equals(t2.name)) {
-			return 0;
+			return false;
 		}
+		//if(t1.time - t2.time > timeThreshold) {
+		//	return false;
+		//}
 		if(t1.name.equals("identity")) {
 			
 		} else if(t1.name.equals("phone")) {
@@ -25,11 +30,14 @@ public class MatchAlgo {
 			int count = 0;
 			for(int i=0; i<m; i++) {
 				for(int j=0; i<n; j++) {
-					//if(t1.)
+					if(match(t1.features.get(i), t2.features.get(j))) {
+						count++;
+					}
 				}
 			}
+			return count >= minCount;
 		}
-		return 0;
+		return false;
 	}
 	
 	public boolean match(String str1, String str2) {
