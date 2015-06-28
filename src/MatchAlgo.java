@@ -13,15 +13,23 @@ public class MatchAlgo {
 	// Compute Match Point for two record
 	public int computeMatchPoint(Thing t1, Thing t2) {
 		if(!t1.name.equals(t2.name)) {
-			
+			return 0;
 		}
 		if(t1.name.equals("identity")) {
 			
 		} else if(t1.name.equals("phone")) {
 			
 		} else {
-			
+			int m = t1.features.size();
+			int n = t2.features.size();
+			int count = 0;
+			for(int i=0; i<m; i++) {
+				for(int j=0; i<n; j++) {
+					//if(t1.)
+				}
+			}
 		}
+		return 0;
 	}
 	
 	public boolean match(String str1, String str2) {
