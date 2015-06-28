@@ -59,6 +59,10 @@ public class ThingSrv extends HttpServlet {
 			ArrayList<Thing> tempThings = dbWrapper.getFromDB(lost_found.equals("lost"));
 			tempThings.add(thing);
 			dbWrapper.saveToDB(lost_found.equals("lost"), tempThings);
+			if (!lost_found.equals("lost")) {
+				TwitterWrapper tw = new TwitterWrapper();
+				tw.postTweet(thing.location);
+			}
 		}
 		response.setContentType("text/plain");
 	    response.setStatus(200);
