@@ -12,28 +12,30 @@ import com.amazonaws.services.simpleemail.model.SendEmailRequest;
 public class EmailWrapper {
 	
 	static final String FROM = "ruandi88@gmail.com";  // Replace with your "From" address. This address must be verified.
-    static final String BODY = "You got a match";
-    static final String SUBJECT = "Good News";
-    
+     
     public static void main(String[] args) {
     	EmailWrapper wrapper = new EmailWrapper();
     	wrapper.sendEmail(null, null);
     }
     
-	public void sendEmail(Thing thingLost, Thing thingFound) {		
-		String toEmail = thingLost.email;
-		Destination destination = new Destination().withToAddresses(new String[]{toEmail});
+	public void sendEmail(Thing thingLost, Thing thingFound) {	
+		String BODY_toFinder = "Congratulations! We find the loser for your object!" + "/n/n" + "From Seekit";
+	    String BODY_toLoser = "Congratulations! We find your object!" + "/n/n" + "From Seekit";
+	    String SUBJECT = "Good News from Seekit";
+	    
+		Destination toLoser = new Destination().withToAddresses(new String[]{thingLost.email});
+        Content subject_toLoser = new Content().withData(SUBJECT);
+        Content textBody_toLoser = new Content().withData(BODY_toLoser);
+        Body body_toLoser = new Body().withText(textBody_toLoser);
+        Message message_toLoser = new Message().withSubject(subject_toLoser).withBody(body_toLoser);
+        SendEmailRequest request_toLoser = new SendEmailRequest().withSource(FROM).withDestination(toLoser).withMessage(message_toLoser);
         
-        // Create the subject and body of the message.
-        Content subject = new Content().withData(SUBJECT);
-        Content textBody = new Content().withData(BODY); 
-        Body body = new Body().withText(textBody);
-        
-        // Create a message with the specified subject and body.
-        Message message = new Message().withSubject(subject).withBody(body);
-        
-        // Assemble the email.
-        SendEmailRequest request = new SendEmailRequest().withSource(FROM).withDestination(destination).withMessage(message);
+        Destination toFinder = new Destination().withToAddresses(new String[]{thingFound.email});
+        Content subject_toFinder = new Content().withData(SUBJECT);
+        Content textBody_toFinder = new Content().withData(BODY_toFinder);
+        Body body_toFinder = new Body().withText(textBody_toFinder);
+        Message message_toFinder = new Message().withSubject(subject_toFinder).withBody(body_toFinder);
+        SendEmailRequest request_toFinder = new SendEmailRequest().withSource(FROM).withDestination(toFinder).withMessage(message_toFinder);
         
         try
         {        
@@ -57,7 +59,8 @@ public class EmailWrapper {
             client.setRegion(REGION);
        
             // Send the email.
-            client.sendEmail(request);  
+            client.sendEmail(request_toLoser);
+            client.sendEmail(request_toFinder);
             System.out.println("Email sent!");
         }
         catch (Exception ex) 
